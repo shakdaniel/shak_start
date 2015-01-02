@@ -9,7 +9,6 @@
 var browserSync = require("browser-sync"),
     del = require("del"),
     gulp = require("gulp"),
-    accord = require("gulp-accord"),
     prefixer = require("gulp-autoprefixer"),
     bump = require("gulp-bump"),
     checkcss = require("gulp-check-unused-css"),
@@ -23,8 +22,10 @@ var browserSync = require("browser-sync"),
     rename = require("gulp-rename"),
     sourcemaps = require("gulp-sourcemaps"),
     stylus = require("gulp-stylus"),
+    uncss = require("gulp-uncss"),
     pngquant = require("imagemin-pngquant"),
-    stylish = require("jshint-stylish");
+    stylish = require("jshint-stylish"),
+    nib = require("nib");
 
 
 
@@ -55,24 +56,35 @@ gulp.task('css', function() {
     return gulp.src(paths.styles)
         .pipe(plumber())
         .pipe(stylus({
+            use: [nib()],
             pretty: true
         }))
         .pipe(prefixer({
-            browsers: ['last 2 versions']
+            browsers: ['last 5 versions']
         }))
-        .pipe(gulp.dest('public/css/'))
+        .pipe(gulp.dest('public/css/'));
+});
+
+gulp.task('csslint', function() {
+    return gulp.src('public/css/*.css')
+        .pipe(plumber())
         .pipe(csslint())
         .pipe(csslint.reporter());
 });
 
-gulp.task('checkcss', function() {
+gulp.task('csscheck', function() {
     return gulp.src(['public/css/*.css', 'public/*.html'])
         .pipe(plumber())
-        .pipe(checkcss())
-        .pipe(csslint())
-        .pipe(csslint.reporter());
+        .pipe(checkcss());
 });
 
+gulp.task('uncss', function() {
+    return gulp.src('public/css/*.css')
+        .pipe(uncss({
+            html: 'public/*.html'
+        }))
+        .pipe(gulp.dest('public/css/'));
+});
 
 
 // JS
@@ -82,7 +94,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('lint', function() {
+gulp.task('jshint', function() {
     return gulp.src('scripts/custom.js')
         .pipe(plumber())
         .pipe(gulp.dest('public/js/'))
@@ -150,5 +162,5 @@ gulp.task('bump', function() {
 
 // Default Task
 gulp.task('default', function() {
-    gulp.start('html', 'css', 'js', 'lint', 'img', 'watch', 'sync');
+    gulp.start('html', 'css', 'uncss', 'js', 'jshint', 'img', 'watch', 'sync');
 });
