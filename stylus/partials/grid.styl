@@ -1,0 +1,42 @@
+$dr-main ?= #f4f4f4
+$dr-red ?= #CE313B
+$dr-orange ?= #EECA44
+$dr-slate ?= #556271
+.desert
+  background: linear-gradient(135deg, rgba($dr-red, .9) 0%,rgba($dr-orange, .9) 100%)
+.slate
+  background: rgba($dr-slate,.9)
+.light
+  background: rgba(#ffffff,.9)
+
+html, body
+  width: 100%
+  height: 100%
+
+*, *:before, *:after
+  box-sizing: border-box
+.clearfix
+  zoom: 1
+.clearfix:before, .clearfix:after
+  content: ''
+  display: table
+.clearfix:after
+  clear: both
+
+.box
+  width: 100%
+.stretch
+  height: 100%
+.overlay
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 0
+.main
+  background: url(http://wallpoper.com/images/00/34/14/30/mountains-clouds_00341430.jpg) no-repeat center
+  background-size: cover
+  position: relative
+.tint
+  position: absolute
+  height: 100%
+  width: 100%
