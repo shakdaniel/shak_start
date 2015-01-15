@@ -4,11 +4,11 @@ header
 	.nav-icon
 	nav
 		ul
-			li.nav-home
-				a(href='/') Home
-			li.nav-about
-				a(href='/about.html') About
-			li.nav-services
-				a(href='/services.html') Services
-			li.nav-contact
-				a(href='/contact.html') Contact
+			mixin navitem(liClass, href, name)
+				li(class=liClass)
+					a(href=href)= name
+			+navitem('nav-home', '/', 'Home')
+			+navitem('nav-about', '/about.html', 'About')
+			+navitem('nav-services', '/services.html', 'Services')
+			+navitem('nav-gallery', '/gallery.html', 'Gallery')
+			+navitem('nav-contact', '/contact.html', 'Contact')
