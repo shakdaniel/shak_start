@@ -1,0 +1,14 @@
+header
+	input(type='checkbox', id='toggle', class='toggle')
+	label(for='toggle', class='toggle-btn')
+	.nav-icon
+	nav
+		ul
+			mixin navitem(liClass, href, name)
+				li(class=liClass)
+					a(href=href)= name
+			+navitem('nav-home', '/', 'Home')
+			+navitem('nav-about', '/about.html', 'About')
+			+navitem('nav-services', '/services.html', 'Services')
+			+navitem('nav-gallery', '/gallery.html', 'Gallery')
+			+navitem('nav-contact', '/contact.html', 'Contact')
