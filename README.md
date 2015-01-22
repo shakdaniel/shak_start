@@ -6,7 +6,6 @@ Workflow
 Project Structure
 -----------------
 ```bash
-<!--tree builder │ ├ └ ─ -->
 dev
   │
   ├─images
