@@ -11,10 +11,21 @@ Project Structure
 |pub | text `text`
 |dev | text
 
+```bash
+├── my-theme
+│   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   └── js
+│   └── page.html
+
 ```
-* dev
-  * item 1
-  * item 2
-    * sub item 1
-    * sub item 3
-```
+````bash
+├── my-theme
+│   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   └── js
+│   └── page.html
+
+````
