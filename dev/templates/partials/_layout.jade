@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    block vars
+    head
+        // Basics
+        meta(charset='utf-8')
+        title Twearkit | #{title}
+        meta(name='description', content='')
+        meta(name='author', content='')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // Styles
+        link(rel='stylesheet', href='styles/main.css')
+        // Fonts
+
+    body(class='#{title}')
+        include _header
+        block content
+        include _footer
+
+        //Scripts
+        script(src='scripts/main.js')
