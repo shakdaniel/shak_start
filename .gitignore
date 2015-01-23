@@ -1,6 +1,6 @@
 node_modules/
 bower_components/
-public/
+pub/
 test/
 scripts/plugins
 scripts/twerk.js
