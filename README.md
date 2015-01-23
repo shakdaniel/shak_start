@@ -1,11 +1,10 @@
 Twer-Kit
 ===
-######Front-end Framework
+####Front-end Framework
 
 Workflow for the champs.
 
-Project Structure
----
+####Project Structure
 ```bash
 dev
   │
