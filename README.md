@@ -1,15 +1,22 @@
 Twer-Kit
-======
+===
+Front-end Framework
+---
 
-Workflow
+Workflow for the champs.
 
 Project Structure
------------------
+---
 ```bash
 dev
   │
   ├─images
   │ └─logo.svg
+  │
+  ├─scripts
+  │ ├─plugins
+  │ │ └─jquery.js
+  │ └─main.js
   │
   ├─styles
   │ ├─partials
@@ -23,11 +30,6 @@ dev
   │ │ ├─_tables.styl
   │ │ └─_type.styl
   │ └─main.styl
-  │
-  ├─scripts
-  │ ├─plugins
-  │ │ └─jquery.js
-  │ └─main.js
   │
   ├─templates
   │ ├─partials

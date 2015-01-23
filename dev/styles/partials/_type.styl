@@ -1,3 +1,36 @@
-h1, p
-	position: relative
-	text-align: center
+body
+    font-family: sans-serif
+h1,h2,p
+    position: relative
+    text-align: center
+    letter-spacing: .1em
+h1
+    font-size: 1.5em
+    padding: .5em 0
+    text-indent: .5em
+    font-weight: lighter
+    @media mobile
+        font-size: 2em
+    @media tablet
+        font-size: 3em
+    @media desktop
+        font-size: 4em
+h1:after
+    content: ''
+    position: absolute
+    width: 10%
+    height: 1px
+    background: white
+    left: 45%
+    bottom: .1em
+p
+    font-size: 1em
+    font-weight: 100
+    padding: 1em 0
+    font-style: italic
+    @media mobile
+        font-size: 2em
+    @media tablet
+        font-size: 3em
+    @media desktop
+        font-size: 4em

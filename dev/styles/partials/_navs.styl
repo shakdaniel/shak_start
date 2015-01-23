@@ -1,27 +1,39 @@
 $btn-count = 5
-$btn-bg = rgba(slateblue, .9)
-$btn-selected = rgba(white, .2)
+$nav-bg = rgba(slateblue, .9)
+$btn-active = rgba(white, .2)
 $btn-hover = rgba(white, .05)
 $icon-bg = white
-$icon-size = 30px
+$icon-size = 20px
 $nav-speed = .2s
+
+// body's class followed by nav li's class.
+$active = ".home .nav-home"
+
+
+{$active}
+  background: $btn-active
 
 nav, nav ul
   position: fixed
   width: 100%
   height: 100%
   z-index: 900
-  background: $btn-bg
+  background: $nav-bg
+
 nav
   left: 150%
+
 .toggle:checked ~ nav
   left: 0
+
 nav ul li
   display: table
   width: 100%
   height: s('calc(100% / '+$btn-count+')')
+
 nav ul li:hover
   background: $btn-hover
+
 nav ul li a
   display: table-cell
   vertical-align: middle
@@ -29,18 +41,26 @@ nav ul li a
   font-size: 1.5em
   letter-spacing: .2em
   color: white
-.toggle, .toggle-btn, .nav-icon
+
+.toggle,
+.toggle-btn,
+.nav-icon
   position: fixed
   height: $icon-size
   width: $icon-size
   top: 15px
   right: 15px
+
 .toggle
   display: none
+
 .toggle-btn
   cursor: pointer
    z-index 1000
-.nav-icon, .nav-icon:before, .nav-icon:after
+
+.nav-icon,
+.nav-icon:before,
+.nav-icon:after
   position fixed
   content: ""
   width: $icon-size
@@ -49,26 +69,30 @@ nav ul li a
   border-radius: ($icon-size/20)
   background: $icon-bg
   z-index 950
+
 .nav-icon:before
   margin-top: ($icon-size/-2)-($icon-size/-20)
+
 .nav-icon:after
   margin-top: ($icon-size/2)-($icon-size/20)
+
 .toggle:checked ~ .nav-icon
   background: none
+
 .toggle:checked ~ .nav-icon:before,
 .toggle:checked ~ .nav-icon:after
   width: $icon-size
   height: ($icon-size/10)
   margin-top: 0
+
 .toggle:checked ~ .nav-icon:before
   transform: rotate(-225deg)
+
 .toggle:checked ~ .nav-icon:after
   transform: rotate(225deg)
-nav, .nav-icon, .nav-icon:before, .nav-icon:after
+
+nav,
+.nav-icon,
+.nav-icon:before,
+.nav-icon:after
   transition all $nav-speed ease
-.home .nav-home,
-.about .nav-about,
-.services .nav-services,
-.gallery .nav-gallery,
-.contact .nav-contact
-  background: $btn-selected

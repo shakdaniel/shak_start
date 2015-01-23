@@ -1,30 +1,30 @@
-(function() {
-    var test = 'working!';
-    var opa = 0.7;
-    document.body.addEventListener('click', function(e) {
-        if (e.target.tagName === 'DIV') {
-            var myOverlay = document.createElement('div');
-            myOverlay.className = 'overlay';
-            document.body.appendChild(myOverlay);
+// (function() {
+//     var test = 'working!';
+//     var opa = 0.7;
+//     document.body.addEventListener('click', function(e) {
+//         if (e.target.tagName === 'DIV') {
+//             var myOverlay = document.createElement('div');
+//             myOverlay.className = 'overlay';
+//             document.body.appendChild(myOverlay);
 
-            //set overlay styles
-            myOverlay.style.position = 'fixed';
-            myOverlay.style.top = '0';
-            myOverlay.style.width = '100%';
-            myOverlay.style.height = '100%';
-            myOverlay.style.background = 'rgba(0,0,0,0'+opa+')';
-            myOverlay.style.cursor = 'pointer';
+//             //set overlay styles
+//             myOverlay.style.position = 'fixed';
+//             myOverlay.style.top = '0';
+//             myOverlay.style.width = '100%';
+//             myOverlay.style.height = '100%';
+//             myOverlay.style.background = 'rgba(0,0,0,0' + opa + ')';
+//             myOverlay.style.cursor = 'pointer';
 
 
-            var elemClass = e.target.className;
-            var addClass = elemClass.substr(0, elemClass.length-13);
+//             var elemClass = e.target.className;
+//             var addClass = elemClass.substr(0, elemClass.length - 13);
 
-            console.log(addClass);
-        } // target is a div
+//             console.log(addClass);
+//         } // target is a div
 
-    }, false); // elem is clicked
+//     }, false); // elem is clicked
 
-})(); // execute function
+// })(); // execute function
 
 
 /*
