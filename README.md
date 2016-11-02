@@ -1,8 +1,6 @@
-Twer-Kit
+Shak_Start
 ===
-####Front-end Framework
-
-Workflow for champs.
+####Front-end Workflow.
 
 ####Project Structure
 ```bash
